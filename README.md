@@ -8,7 +8,7 @@ MERN Authentication.
     Icon - react-ionicons
     Form Validation - Formik and Yup
 
-# Using this
+# `Using this`
 
 ```bash
  git clone https://github.com/desi-programmer/mern-authentication.git
