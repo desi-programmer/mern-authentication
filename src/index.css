@@ -9,6 +9,20 @@ code {
     monospace;
 }
 
+.navbar-expand-lg {
+  background-color: #673AB7 !important;
+}
+
+.navbar-brand {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 .googleBtn {
   background-color: #eee;
 }
