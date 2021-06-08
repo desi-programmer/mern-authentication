@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar></Navbar>
+      <Switch>
+        <Route exact path="/">
+          <div className='text-center'>
+          <h1 className="text-center py-5">Welcome To Home Page</h1>
+          <p>We are about to implement MERN AUTHENTICATION !</p>
+          </div>
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/login">
+          <Login></Login>
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/register">
+          {/* <Register></Register> */}
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

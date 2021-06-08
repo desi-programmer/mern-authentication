@@ -1,0 +1,14 @@
+$primary : #673AB7;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Mono&display=swap');
+
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Roboto Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       Quicksand !default;
+
+h1 {
+    font-weight: 600 !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
