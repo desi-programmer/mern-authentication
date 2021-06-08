@@ -30,17 +30,12 @@ export default function Login() {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-11 col-md-6 col-lg-5 py-3">
-          <h2 className="text-center fw-bold">Login Here</h2>
+          <h2 className="text-center fw-bold">Welcome Back 🙂</h2>
           <form onSubmit={formik.handleSubmit}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email address
               </label>
-
-              {/* {formik.touched.email && formik.errors.email ? (
-                                <div>{formik.errors.email}</div>
-                            ) : null} */}
-
               <input
                 type="email"
                 className={
