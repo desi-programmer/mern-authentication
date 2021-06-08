@@ -5,7 +5,7 @@ export default function Navbar() {
   console.log(location.pathname);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light p-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
       <div className="container">
         <Link className="navbar-brand" to="/">
             <i class="bi bi-trophy"></i> <span></span> Auth
