@@ -1,8 +1,38 @@
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup"; 
+import axios from 'axios';
+import {  useState } from "react";
+import Alert from './ErrorAlert';
 
 export default function Register() {
+  const [errors, seterrors] = useState([]);
+
+  async function registerUser(values) {
+    seterrors([]);
+    console.log(values);
+    // request 
+    try {
+      const response = await axios.post('http://localhost:3001/api/register', values,
+          { 
+          headers: { 'Content-Type': 'application/json; charset=UTF-8',
+         }, 
+        }
+      );
+      console.table(response);
+
+    } catch (error) {
+      var errors = [];
+      for (const err of error.response.data.errors ) {
+        console.log(err.msg);
+        errors.push(err.msg);
+      }
+      seterrors(errors);
+      // console.error(error.response.data);
+    }
+
+  }
+
     // validating the form Fields
     const validationSchema = yup.object({
       email: yup
@@ -13,7 +43,7 @@ export default function Register() {
         .string("Enter your password")
         .min(6, "Password should be of minimum 6 characters length")
         .required("Password is required"),
-        password2 : yup.string("Passwords must match").required("Passwords must match").oneOf([yup.ref('password'), null], 'Passwords must match'),
+      password2 : yup.string("Passwords must match").required("Passwords must match").oneOf([yup.ref('password'), null], 'Passwords must match'),
     });
   
     const formik = useFormik({
@@ -24,14 +54,21 @@ export default function Register() {
       },
       validationSchema: validationSchema,
       onSubmit: (values) => {
-        alert(JSON.stringify(values, null, 2));
+        // alert(JSON.stringify(values, null, 2));
+        registerUser(values);
       },
     });
   return (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-11 col-md-6 col-lg-5 py-3">
-          <h2 className="text-center fw-bold">Create an Account 🙌</h2>
+          <h2 className="text-center fw-bold pb-2">Create an Account 🙌</h2>
+
+          {errors.map((err)=>{
+            return (<Alert key={err} err={err} show={true}></Alert>);
+            })}
+         
+
           <form onSubmit={formik.handleSubmit}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">

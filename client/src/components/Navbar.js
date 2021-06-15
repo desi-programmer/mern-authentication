@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
       <div className="container">
         <Link className="navbar-brand" to="/">
-            <i class="bi bi-trophy"></i> <span></span> Auth
+            <i className="bi bi-trophy"></i> <span></span> Auth
         </Link>
         <button
           className="navbar-toggler"
