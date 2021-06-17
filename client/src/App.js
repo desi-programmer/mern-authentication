@@ -38,18 +38,12 @@ function App() {
       <Navbar></Navbar>
       <Switch>
         <Route exact path="/">
-<<<<<<< HEAD
-          <div className="text-center">
-            <h1 className="text-center py-5">Welcome To Home Page</h1>
-            <p>We are about to implement MERN AUTHENTICATION !</p>
-=======
           <div className='text-center'>
           <h1 className="text-center py-5">Welcome To Home Page</h1>
           <p>We are about to implement MERN AUTHENTICATION !</p>
           { user ? <p>User</p> : <p>No User</p> }
           {user ? <Link to='/profile'>Go to Profile</Link> : null }
           {/* <PrivateRoute exact path='/profile' component={Profile}></PrivateRoute> */}
->>>>>>> a8d5146d6b30cf1b42e3c9273c2c946593ce56e6
           </div>
         </Route>
       
