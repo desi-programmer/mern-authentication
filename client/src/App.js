@@ -9,9 +9,9 @@ function App() {
       <Navbar></Navbar>
       <Switch>
         <Route exact path="/">
-          <div className='text-center'>
-          <h1 className="text-center py-5">Welcome To Home Page</h1>
-          <p>We are about to implement MERN AUTHENTICATION !</p>
+          <div className="text-center">
+            <h1 className="text-center py-5">Welcome To Home Page</h1>
+            <p>We are about to implement MERN AUTHENTICATION !</p>
           </div>
         </Route>
       </Switch>
